@@ -1,4 +1,8 @@
 function out = cocoAnnotationsFromID_preprocess(id, coco, trainImgFolder, trainCatIds)
+% cocoAnnotationsFromID_preprocess - Extract annotation data for a given
+% image ID
+
+% Copyright 2020 The MathWorks, Inc.
 
 imStruct = coco.loadImgs(id);
 im = imread(fullfile(trainImgFolder,imStruct.file_name));

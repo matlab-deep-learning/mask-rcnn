@@ -1,6 +1,8 @@
 function dlnet = createMaskRCNN(numClasses, params) 
 % Create Mask RCNN network
 
+% Copyright 2020 The MathWorks, Inc.
+
 
 % Create FasterRCNN network and modify it to a MaskRCNN
 lgraph = fasterRCNNLayers(params.ImageSize, numClasses, params.AnchorBoxes,  'resnet101');

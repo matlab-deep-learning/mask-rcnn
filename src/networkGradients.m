@@ -2,7 +2,9 @@ function [gradients, totalLoss, state] = networkGradients(X, gTruthBoxes, gTruth
 % networkGradients - Gradient function to train MaskRCNN using a custom
 % training loop.
  
- 
+% Copyright 2020 The MathWorks, Inc.
+
+
 RPNRegDeltas = {'rpnConv1x1BoxDeltas'};regionProposal = {'rpl'};
  
 outputNodes = [ RPNRegDeltas, regionProposal, dlnet.OutputNames(:)'];
@@ -60,10 +62,10 @@ classNames = categories(gTruthLabels{1});
 % Step 3: Assign groundtrutrh labels to proposals
 classificationTargets = helper.generateClassificationTargets (gTruthLabels, assignment,...
                                              positiveIndex, negativeIndex,...
-                                             classNames, 'background');
+                                             classNames, params.BackgroundClass);
                                          
 % Step 4: Calculate instance weights
-instanceWeightsReg = helper.regressionResponseInstanceWeights (classificationTargets, 'background');
+instanceWeightsReg = helper.regressionResponseInstanceWeights (classificationTargets, params.BackgroundClass);
  
 % Step 5: Generate mask targets
  

@@ -1,31 +1,18 @@
-function displayVerboseOutputEveryEpoch(~,start,learnRate,epoch,iteration,...
-    accuracyTrain,accuracyValidation,lossTrain,lossValidation,trainTime,validationTime)
-%if options.Verbose
+function displayVerboseOutputEveryEpoch(start,learnRate,epoch,iteration,lossTrain)
+
+% Copyright 2020 The MathWorks, Inc.
+
     D = duration(0,0,toc(start),'Format','hh:mm:ss');
-    trainTime = duration(0,0,trainTime,'Format','hh:mm:ss');
-    validationTime = duration(0,0,validationTime,'Format','hh:mm:ss');
-    
-    %lossValidation = gather(extractdata(lossValidation));
-    lossValidation = compose('%.4f',lossValidation);
-    
-    %accuracyValidation = compose('%.2f',accuracyValidation*100) + "%";
-    
+        
     lossTrain = gather(extractdata(lossTrain));
     lossTrain = compose('%.4f',lossTrain);
     
-    %accuracyTrain = compose('%.2f',accuracyTrain*100) + "%";
     learnRate = compose('%.4f',learnRate);
     
     disp("| " + ...
         pad(string(epoch),7,'both') + " | " + ...
         pad(string(iteration),11,'both') + " | " + ...
         pad(string(D),14,'both') + " | " + ...
-        pad(string(accuracyTrain),12,'both') + " | " + ...
-        pad(string(accuracyValidation),12,'both') + " | " + ...
         pad(string(lossTrain),12,'both') + " | " + ...
-        pad(string(lossValidation),12,'both') + " | " + ...
-        pad(string(learnRate),15,'both') + " | " + ...
-        pad(string(trainTime),10,'both') + " | " + ...
-        pad(string(validationTime),15,'both') + " |")
-%end
+        pad(string(learnRate),15,'both') + " | " )
 end

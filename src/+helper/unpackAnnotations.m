@@ -1,6 +1,8 @@
 function unpackAnnotations(trainCats, annotationfile, trainImgFolder, unpackLocation )
 % Unpack COCO annotations to MAT files
 
+% Copyright 2020 The MathWorks, Inc.
+
 % Initialize the CocoApi object
 coco = CocoApi(annotationfile);
   
@@ -11,7 +13,7 @@ imgIds = coco.getImgIds('catIds',catIds);
 % In-Memory datastore to manage imageIDs
 imgID_DS = arrayDatastore(imgIds);
 % Get image and ground truth data from imageIds
-ds = transform(imgID_DS, @(x)helper.cocoAnnotationsFromID_preprocess(x, coco,trainImgFolder, catIds));
+ds = transform(imgID_DS, @(x)helper.cocoAnnotationsFromID_preprocess(x{1}, coco,trainImgFolder, catIds));
 
 i = 1;
 while (ds.hasdata)
