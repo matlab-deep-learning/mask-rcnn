@@ -1,5 +1,6 @@
 classdef RegionProposal < nnet.layer.Layer
 
+% Copyright 2020 The MathWorks, Inc.
 
     properties (Learnable)
         % (Optional) Layer learnable parameters.

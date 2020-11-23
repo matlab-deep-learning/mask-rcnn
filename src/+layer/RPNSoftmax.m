@@ -1,5 +1,7 @@
 classdef RPNSoftmax < nnet.layer.Layer
 
+% Copyright 2020 The MathWorks, Inc.
+
     properties
         % (Optional) Layer properties.
 

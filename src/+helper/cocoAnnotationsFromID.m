@@ -1,5 +1,7 @@
 function out = cocoAnnotationsFromID (id, coco, trainImgFolder, trainCatIds)
 
+% Copyright 2020 The MathWorks, Inc.
+
 imStruct = coco.loadImgs(id);
 im = imread(fullfile(trainImgFolder,imStruct.file_name));
 

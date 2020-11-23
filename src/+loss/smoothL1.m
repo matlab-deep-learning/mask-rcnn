@@ -15,9 +15,8 @@ function loss = smoothL1( Y, T, W)
 %   to achieve average loss. For example, W = 1/N, from most cases
 %   where N is the number of observations.
 
-%     if(~isdlarray(T))
-%        T = dlarray(T);
-%     end
+% Copyright 2020 The MathWorks, Inc.
+
 
     X = Y - T;
 

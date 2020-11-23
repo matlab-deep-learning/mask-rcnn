@@ -2,7 +2,7 @@ classdef targetGenerationUtils
     % Faster R-CNN loss computation utilities. Used in loss layer and in
     % summary layer to display training progress metrics.
     
-    % Copyright 2018-2019 The MathWorks, Inc.
+    % Copyright 2020 The MathWorks, Inc.
        
     methods(Static)
         function [Treg, Wreg, assignedLabels] = regressionResponse(proposals, gTruthBoxesInBatch, gTruthLabelsInBatch, params)

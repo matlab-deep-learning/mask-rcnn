@@ -1,5 +1,3 @@
-function endVerboseOutput(options)
-% if options.Verbose
+function endVerboseOutput()
     disp("|=====================================================================================================================================================|")
-% end
 end

@@ -3,7 +3,7 @@ classdef boxAssignmentUtils
     % boxes. This is used for training anchor/box prior based CNN object
     % detectors such as RPN, Fast R-CNN, Faster R-CNN, MaskRCNN, SSD, YOLO v2, etc.    
     
-    % Copyright 2018 The MathWorks, Inc.
+    % Copyright 2020 The MathWorks, Inc.
     
     methods(Static)
         

@@ -2,7 +2,7 @@ function [ assignedLabels ] = generateClassificationTargets (gTruthLabels, assig
                                              positiveIndex, negativeIndex,...
                                              classNames, backgroundClassName)
                                          
-    % assignedLabels - numProposalsx1 categorical
+    % Copyright 2020 The MathWorks, Inc.
     
     for i=1:size(gTruthLabels,1)
         assignedLabels{i} = helper.boxAssignmentUtils.boxLabelsFromAssignment(...

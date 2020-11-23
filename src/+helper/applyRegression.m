@@ -9,6 +9,8 @@ function bboxes = applyRegression(boxIn,reg, minSize, maxSize)
 % Output:
 % bboxes      - Boxes after regression - Nx4 (formated as [x y w h])
 
+% Copyright 2020 The MathWorks, Inc.
+
     x = reg(:,1);
     y = reg(:,2);
     w = reg(:,3);

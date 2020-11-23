@@ -1,9 +1,11 @@
 function [ outputMasks ] = cropandResizeMasks (gTruthMasks, gTruthBoxes, outputSize)
-% 
+
 % gTruthMasks - HxWxnumObjects
 % gTruthBoxes - numObjectsx4
 % outputSize - [h' w']
 % outputMasks - h'x w' x numObjects
+
+% Copyright 2020 The MathWorks, Inc.
 
 % Loop through the gtruth boxes and crop corresponding mask instance
 

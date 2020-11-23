@@ -1,10 +1,12 @@
+classdef BoundingBoxRegressionModel < handle
 % This class defines the bounding box regression model defined here:
 %
 % Girshick, Ross, et al. "Rich feature hierarchies for accurate object
 % detection and semantic segmentation." Proceedings of the IEEE conference
 % on computer vision and pattern recognition. 2014.
 
-classdef BoundingBoxRegressionModel < handle
+% Copyright 2020 The MathWorks, Inc.
+
     properties
         ModelX
         ModelY

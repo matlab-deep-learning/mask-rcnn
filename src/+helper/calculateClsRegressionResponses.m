@@ -2,7 +2,7 @@ function [clsResponse, T, W] = calculateClsRegressionResponses(trainingSamples, 
 %calculateClsRegressionResponses RPN image centric classification and regression responses.
 %
 
-% Copyright 2019 The MathWorks, Inc.
+% Copyright 2020 The MathWorks, Inc.
 
     % Samples contain one cell element of each of the struct fields.
     idx = 1;

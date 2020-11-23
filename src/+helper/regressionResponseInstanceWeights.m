@@ -1,6 +1,6 @@
 function W = regressionResponseInstanceWeights(assignedLabels, bgClass)
 
-% labels - numProposalx1 categorical
+% Copyright 2020 The MathWorks, Inc.
 
 for i = 1:length(assignedLabels)
     

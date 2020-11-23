@@ -12,6 +12,9 @@ function loss = crossEntropyLoss( Y, T )
     % Observations are encoded in T as non-zero values. T may
     % contain all zeros. Prevent divsion by zero preventing numObs
     % to be zero.
+    
+    % Copyright 2020 The MathWorks, Inc.
+    
     numObservations = max(nnz(T),1); 
 
     % sum along numClasses

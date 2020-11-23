@@ -1,4 +1,6 @@
 function [Treg, Wreg, assignedLabels] = rpnRegressionResponse( featureSize, gTruthBoxesInBatch, imageSize, params)
+    
+% Copyright 2020 The MathWorks, Inc.
     proposalParams = params;
 
     numObservations = numel(gTruthBoxesInBatch);

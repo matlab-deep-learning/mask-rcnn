@@ -1,6 +1,7 @@
 function data = preprocessData(data, targetSize)
-% Resize the images and scale the pixels to between 0 and 1. Also scale the
-% corresponding bounding boxes.
+% Resize the image and scale the corresponding bounding boxes.
+
+% Copyright 2020 The MathWorks, Inc.
 
 im = data{1};
 bboxes = data{2};
@@ -37,8 +38,6 @@ im = imcrop(im, cropWindow);
 masks = masks(r,c,indices);
 
 labels = labels(indices);
-
-
 
 % im_out = zeros(targetSize, 'like', im);
 % masks_out = false([targetSize(1:2) size(masks,3)]);

@@ -4,6 +4,8 @@ function [assignedMasks] = generateMaskTargets (croppedMasks, assignments, assig
 % assignments - numProposalsx1
 % assignedMasks - h'x w'x numClasses x numProposals
 
+% Copyright 2020 The MathWorks, Inc.
+
 for i = 1:length(croppedMasks)
     
     if(params.ClassAgnosticMasks)

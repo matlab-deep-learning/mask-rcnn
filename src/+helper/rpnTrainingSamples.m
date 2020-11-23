@@ -1,5 +1,7 @@
 function samples = rpnTrainingSamples(imageSize, featureMapSize, params, varargin)
 
+% Copyright 2020 The MathWorks, Inc.
+
 if isfield(params, 'GroundTruthMby4') && params.GroundTruthMby4
     % Ground truth is already vertcat'ed into one M-by-4 matrix.
     groundTruthBoxes = varargin{1};

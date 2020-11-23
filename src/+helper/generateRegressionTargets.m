@@ -4,6 +4,8 @@ function [ T ] = generateRegressionTargets(groundTruthBoxes, proposals, assignme
 % proposals - numproposalsx4
 % T - numProposals x numclasses
 
+% Copyright 2020 The MathWorks, Inc.
+
 % Compute regression targets for bbox  estimation 
 % This function computes dx, dy, dw, dh from ground truth and proposals 
 

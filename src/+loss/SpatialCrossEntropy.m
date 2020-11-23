@@ -1,5 +1,7 @@
 function loss = SpatialCrossEntropy(Y, T, positiveIds)
-   
+
+% Copyright 2020 The MathWorks, Inc.
+
     if(any(positiveIds))
         
         positiveIds = find(positiveIds);

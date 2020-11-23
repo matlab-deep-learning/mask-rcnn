@@ -1,6 +1,7 @@
 classdef boxUtils
-    % A collection of box conversion and scaling utilities.
+% A collection of box conversion and scaling utilities.
     
+% Copyright 2020 The MathWorks, Inc.
     methods(Static)
         %------------------------------------------------------------------
         function boxes = xywhToX1Y1X2Y2(boxes)

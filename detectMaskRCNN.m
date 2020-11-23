@@ -17,6 +17,8 @@ function [bboxes, scores, labels, finalMasks] = detectMaskRCNN(dlnet, maskSubnet
 % finalMasks - Binary object Masks detections formatted as 
 %              H x W x NumDetections
 
+% Copyright 2020 The MathWorks, Inc.
+
 
 % Prepare input image for prediction
 if(executionEnvironment == "gpu")

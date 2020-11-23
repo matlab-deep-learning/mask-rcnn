@@ -1,6 +1,8 @@
 function maskNet = extractMaskNetwork(net)
 % Extract the Mask subnetwork from a pre-trained maskrcnn network
 
+% Copyright 2020 The MathWorks, Inc.
+
     roiInput = imageInputLayer([5 1000 1], 'Name', 'roiInput', 'Normalization', 'none');
     
     featureInput = imageInputLayer([50 50 1024], 'Name', 'featureInput', 'Normalization', 'none');

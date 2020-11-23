@@ -7,7 +7,9 @@ function loss = CrossEntropy( Y, T )
     %
     % Inputs:
     %   Y   Predictions made by network, M-by-N-by-numClasses-by-numAnchors
-    %   T   Targets (actual values), M-by-N-by-numClasses-by-numAnchors    
+    %   T   Targets (actual values), M-by-N-by-numClasses-by-numAnchors  
+    
+    % Copyright 2020 The MathWorks, Inc.
 
     % Observations are encoded in T as non-zero values. T may
     % contain all zeros. Prevent divsion by zero preventing numObs

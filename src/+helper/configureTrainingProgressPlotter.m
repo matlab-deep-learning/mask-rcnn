@@ -1,5 +1,8 @@
 function [lossPlotter, learningRatePlotter] = configureTrainingProgressPlotter(f)
 % Create the subplots to display the loss and learning rate.
+
+% Copyright 2020 The MathWorks, Inc.
+
 figure(f);
 clf
 subplot(2,1,1);

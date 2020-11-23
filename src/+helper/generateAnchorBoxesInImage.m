@@ -8,6 +8,8 @@ function [anchorBoxes, anchorID] = generateAnchorBoxesInImage(...
 % location. The ID helps prevent using the same feature for both positive
 % and negative samples.
 
+% Copyright 2020 The MathWorks, Inc.
+
 % Generate box centers in feature map (spatial coordinates).
 [X, Y] = meshgrid(1:featureMapSize(2),1:featureMapSize(1));
 xCenterInFeatureMap = X(:);

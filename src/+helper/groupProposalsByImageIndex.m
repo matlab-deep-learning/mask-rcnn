@@ -4,6 +4,8 @@ function [AG] = groupProposalsByImageIndex(A,N)
 % numBatchIndices x 1. Each cell holding Mix4 proposals for the ith image
 % in the batch.
 
+% Copyright 2020 The MathWorks, Inc.
+
     % Group by indices.
     ia = gather(A(:,5)); % gather: gpuArray does not support accumarray w/ @(x){x}.
     iag = accumarray(ia, 1:numel(ia), [N 1], @(x){x});

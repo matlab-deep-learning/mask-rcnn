@@ -50,7 +50,7 @@ function [ assignments, positiveIndex, negativeIndex] = bboxMatchAndAssign(propo
 %                  within the range specified in input
 %                  negOverlap.
      
-     
+% Copyright 2020 The MathWorks, Inc.    
      numImagesInBatch = size(gTruthBoxes,1); 
      
      % Loop over batches

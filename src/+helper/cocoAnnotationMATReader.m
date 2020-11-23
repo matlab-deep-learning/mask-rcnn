@@ -1,5 +1,7 @@
 function  out = cocoAnnotationMATReader(filename, trainImgFolder)
 
+% Copyright 2020 The MathWorks, Inc.
+
     data = load(filename);
     
     im = imread([trainImgFolder '/' data.imageName]);
