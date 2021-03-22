@@ -1,15 +1,25 @@
-function dlnet = createMaskRCNN(numClasses, params) 
+function dlnet = createMaskRCNN(numClasses, params, featureExtractor) 
 % Create Mask RCNN network
 
-% Copyright 2020 The MathWorks, Inc.
 
-
+validatestring(featureExtractor, {'resnet101', 'resnet50'});
 % Create FasterRCNN network and modify it to a MaskRCNN
-lgraph = fasterRCNNLayers(params.ImageSize, numClasses, params.AnchorBoxes,  'resnet101');
+lgraph = fasterRCNNLayers(params.ImageSize, numClasses, params.AnchorBoxes,  featureExtractor);
+
+switch(featureExtractor)
+    case 'resnet50'
+        detectorFeatureLayer = 'activation_49_relu';
+        inputLayerName = 'input_1';
+    case 'resnet101'
+        detectorFeatureLayer = 'res5c_relu';
+        inputLayerName = 'data';
+    otherwise
+        error('Unsupported feature extraction network');
+end
 
 inputLayer = imageInputLayer(params.ImageSize,'Normalization', 'rescale-symmetric', 'Max', 255, 'Min', 0, 'name','input');
 
-lgraph = lgraph.replaceLayer('data', inputLayer);
+lgraph = lgraph.replaceLayer(inputLayerName, inputLayer);
 
 % Drop loss layers
 lgraph = lgraph.removeLayers(lgraph.OutputNames);
@@ -23,7 +33,7 @@ maskHead = createMaskHead(numClasses, params);
 
 lgraph = lgraph.addLayers(maskHead);
 
-lgraph = lgraph.connectLayers('res5c_relu', 'mask_tConv1');
+lgraph = lgraph.connectLayers(detectorFeatureLayer, 'mask_tConv1');
 
 % Replace RegionProposalLayer with custom RPL
 customRegionProposal = layer.RegionProposal('rpl', params.AnchorBoxes, params);
